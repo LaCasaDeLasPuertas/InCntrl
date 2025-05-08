@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InCntrl - Tu Hogar Inteligente</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0F2C59',secondary:'#42E2B8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+}
+.hero-section {
+background-image: linear-gradient(to right, rgba(15, 44, 89, 0.9) 40%, rgba(15, 44, 89, 0.7) 60%, rgba(15, 44, 89, 0.3) 80%, rgba(15, 44, 89, 0) 100%), url('https://readdy.ai/api/search-image?query=modern%20smart%20home%20living%20room%20with%20futuristic%20technology%2C%20smart%20lighting%20system%2C%20smart%20tv%2C%20voice%20assistant%20devices%2C%20clean%20minimalist%20design%2C%20blue%20and%20white%20color%20scheme%2C%20evening%20ambient%20lighting%2C%20high-end%20interior%20design%2C%20no%20people%2C%20photorealistic&width=1200&height=600&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center right;
+}
+.custom-shadow {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.category-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.product-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.benefit-card:hover {
+transform: translateY(-5px);
+}
+.whatsapp-btn {
+box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
+}
+.whatsapp-btn:hover {
+box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
+transform: translateY(-2px);
+}
+input:focus {
+outline: none;
+box-shadow: 0 0 0 2px rgba(66, 226, 184, 0.5);
+}
+.custom-slider {
+scroll-snap-type: x mandatory;
+scroll-behavior: smooth;
+}
+.slider-item {
+scroll-snap-align: start;
+}
+.slider-dot {
+transition: all 0.3s ease;
+}
+.slider-dot.active {
+background-color: #42E2B8;
+width: 12px;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="bg-white shadow-sm fixed w-full top-0 z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<a href="#" class="font-['Montserrat'] text-primary text-2xl font-bold tracking-tight">InCntrl</a>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#" class="text-primary hover:text-secondary font-medium transition duration-300">Inicio</a>
+<a href="#" class="text-gray-700 hover:text-secondary font-medium transition duration-300">Productos</a>
+<a href="#" class="text-gray-700 hover:text-secondary font-medium transition duration-300">Ofertas</a>
+<a href="#" class="text-gray-700 hover:text-secondary font-medium transition duration-300">Sobre Nosotros</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="relative">
+<input type="text" placeholder="Buscar productos..." class="hidden md:block pl-10 pr-4 py-2 rounded border border-gray-200 text-sm w-48 focus:w-64 transition-all duration-300">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-search-line"></i>
+</div>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="hero-section w-full h-[600px] flex items-center">
+<div class="container mx-auto px-4">
+<div class="max-w-xl">
+<h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Convierte tu hogar en un hogar inteligente</h1>
+<p class="text-gray-100 text-lg mb-8">Tecnología de vanguardia para hacer tu vida más cómoda, segura y eficiente.</p>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20productos%20de%20InCntrl" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-6 py-3 !rounded-button font-medium transition duration-300">
+<i class="ri-whatsapp-fill mr-2 text-xl"></i>
+Comprar por WhatsApp
+</a>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary text-center mb-12">Categorías Principales</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Category 1 -->
+<div class="category-card bg-white rounded-lg p-6 text-center transition duration-300 custom-shadow">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-50 rounded-full text-primary">
+<i class="ri-lightbulb-line text-3xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Iluminación Inteligente</h3>
+<p class="text-gray-600 mb-4">Controla la iluminación de tu hogar desde cualquier lugar.</p>
+<a href="#" class="text-secondary font-medium hover:underline inline-flex items-center">
+Ver productos
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Category 2 -->
+<div class="category-card bg-white rounded-lg p-6 text-center transition duration-300 custom-shadow">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-50 rounded-full text-primary">
+<i class="ri-shield-keyhole-line text-3xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Seguridad Smart</h3>
+<p class="text-gray-600 mb-4">Protege tu hogar con la última tecnología en seguridad.</p>
+<a href="#" class="text-secondary font-medium hover:underline inline-flex items-center">
+Ver productos
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Category 3 -->
+<div class="category-card bg-white rounded-lg p-6 text-center transition duration-300 custom-shadow">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-50 rounded-full text-primary">
+<i class="ri-voice-recognition-line text-3xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Asistentes Virtuales</h3>
+<p class="text-gray-600 mb-4">Simplifica tu día a día con asistentes inteligentes.</p>
+<a href="#" class="text-secondary font-medium hover:underline inline-flex items-center">
+Ver productos
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<!-- Category 4 -->
+<div class="category-card bg-white rounded-lg p-6 text-center transition duration-300 custom-shadow">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-50 rounded-full text-primary">
+<i class="ri-home-gear-line text-3xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Automatización</h3>
+<p class="text-gray-600 mb-4">Automatiza tareas cotidianas para mayor comodidad.</p>
+<a href="#" class="text-secondary font-medium hover:underline inline-flex items-center">
+Ver productos
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary text-center mb-12">Productos Destacados</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="product-card bg-white rounded-lg overflow-hidden transition duration-300 custom-shadow">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%20smart%20light%20bulb%20with%20white%20base%20and%20colorful%20light%2C%20minimalist%20design%2C%20product%20photography%20on%20white%20background%2C%20high%20resolution%2C%20commercial%20quality&width=600&height=400&seq=2&orientation=landscape" alt="Foco Inteligente RGB" class="w-full h-64 object-cover object-top">
+<div class="absolute top-3 right-3 bg-secondary text-primary text-xs font-bold px-2 py-1 rounded">NUEVO</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Foco Inteligente RGB</h3>
+<p class="text-gray-600 mb-3">Cambia el color y la intensidad desde tu smartphone.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold text-xl">S/ 109</span>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20el%20Foco%20Inteligente%20RGB%20por%20$299" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-4 py-2 !rounded-button text-sm font-medium transition duration-300 whitespace-nowrap">
+<i class="ri-whatsapp-fill mr-1"></i>
+Comprar
+</a>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card bg-white rounded-lg overflow-hidden transition duration-300 custom-shadow">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=smart%20door%20lock%20with%20keypad%20and%20fingerprint%20scanner%2C%20sleek%20modern%20design%2C%20metallic%20finish%2C%20product%20photography%20on%20white%20background%2C%20high%20resolution%2C%20commercial%20quality&width=600&height=400&seq=3&orientation=landscape" alt="Cerradura Inteligente" class="w-full h-64 object-cover object-top">
+<div class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded">OFERTA</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Cerradura Inteligente</h3>
+<p class="text-gray-600 mb-3">Control de acceso con huella digital y código.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-400 line-through text-sm">S/ 899</span>
+<span class="text-primary font-bold text-xl block">S/ 729</span>
+</div>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20la%20Cerradura%20Inteligente%20en%20oferta%20por%20$1,999" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-4 py-2 !rounded-button text-sm font-medium transition duration-300 whitespace-nowrap">
+<i class="ri-whatsapp-fill mr-1"></i>
+Comprar
+</a>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card bg-white rounded-lg overflow-hidden transition duration-300 custom-shadow">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=amazon%20echo%20dot%20smart%20speaker%2C%20modern%20design%2C%20product%20photography%20on%20white%20background%2C%20high%20resolution%2C%20commercial%20quality&width=600&height=400&seq=4&orientation=landscape" alt="Asistente Virtual Echo" class="w-full h-64 object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Asistente Virtual Echo</h3>
+<p class="text-gray-600 mb-3">Controla tu hogar con comandos de voz.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold text-xl">S/ 479</span>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20el%20Asistente%20Virtual%20Echo%20por%20$1,299" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-4 py-2 !rounded-button text-sm font-medium transition duration-300 whitespace-nowrap">
+<i class="ri-whatsapp-fill mr-1"></i>
+Comprar
+</a>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card bg-white rounded-lg overflow-hidden transition duration-300 custom-shadow">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=smart%20led%20strip%20lights%20with%20controller%2C%20colorful%2C%20product%20photography%20on%20white%20background%2C%20high%20resolution%2C%20commercial%20quality&width=600&height=400&seq=5&orientation=landscape" alt="Tira LED Inteligente" class="w-full h-64 object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Tira LED Inteligente</h3>
+<p class="text-gray-600 mb-3">5 metros de iluminación RGB personalizable.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold text-xl">S/ 169</span>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20la%20Tira%20LED%20Inteligente%20por%20$449" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-4 py-2 !rounded-button text-sm font-medium transition duration-300 whitespace-nowrap">
+<i class="ri-whatsapp-fill mr-1"></i>
+Comprar
+</a>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card bg-white rounded-lg overflow-hidden transition duration-300 custom-shadow">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=smart%20security%20camera%2C%20modern%20design%2C%20indoor%20camera%2C%20product%20photography%20on%20white%20background%2C%20high%20resolution%2C%20commercial%20quality&width=600&height=400&seq=6&orientation=landscape" alt="Cámara de Seguridad WiFi" class="w-full h-64 object-cover object-top">
+<div class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded">OFERTA</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Cámara de Seguridad WiFi</h3>
+<p class="text-gray-600 mb-3">Visión nocturna y detección de movimiento.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-400 line-through text-sm">S/ 329</span>
+<span class="text-primary font-bold text-xl block">S/ 259</span>
+</div>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20la%20Cámara%20de%20Seguridad%20WiFi%20en%20oferta%20por%20$699" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-4 py-2 !rounded-button text-sm font-medium transition duration-300 whitespace-nowrap">
+<i class="ri-whatsapp-fill mr-1"></i>
+Comprar
+</a>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card bg-white rounded-lg overflow-hidden transition duration-300 custom-shadow">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=smart%20plug%20with%20energy%20monitoring%2C%20compact%20design%2C%20product%20photography%20on%20white%20background%2C%20high%20resolution%2C%20commercial%20quality&width=600&height=400&seq=7&orientation=landscape" alt="Enchufe Inteligente" class="w-full h-64 object-cover object-top">
+<div class="absolute top-3 right-3 bg-secondary text-primary text-xs font-bold px-2 py-1 rounded">NUEVO</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Enchufe Inteligente</h3>
+<p class="text-gray-600 mb-3">Controla tus electrodomésticos a distancia.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold text-xl">S/ 129</span>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20el%20Enchufe%20Inteligente%20por%20$349" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-4 py-2 !rounded-button text-sm font-medium transition duration-300 whitespace-nowrap">
+<i class="ri-whatsapp-fill mr-1"></i>
+Comprar
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="inline-flex items-center bg-primary text-white px-6 py-3 !rounded-button font-medium transition duration-300 hover:bg-primary/90 whitespace-nowrap">
+Ver todos los productos
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary text-center mb-12">¿Por qué elegirnos?</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Benefit 1 -->
+<div class="benefit-card bg-white p-8 rounded-lg text-center transition duration-300 custom-shadow">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-50 rounded-full text-primary">
+<i class="ri-customer-service-2-line text-3xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Asesoría Personalizada</h3>
+<p class="text-gray-600">Te ayudamos a elegir los productos ideales para tu hogar según tus necesidades específicas.</p>
+</div>
+<!-- Benefit 2 -->
+<div class="benefit-card bg-white p-8 rounded-lg text-center transition duration-300 custom-shadow">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-50 rounded-full text-primary">
+<i class="ri-shield-check-line text-3xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Garantía de Productos</h3>
+<p class="text-gray-600">Todos nuestros productos cuentan con garantía oficial y respaldo directo de los fabricantes.</p>
+</div>
+<!-- Benefit 3 -->
+<div class="benefit-card bg-white p-8 rounded-lg text-center transition duration-300 custom-shadow">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-50 rounded-full text-primary">
+<i class="ri-tools-line text-3xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Soporte Técnico</h3>
+<p class="text-gray-600">Asistencia técnica disponible para ayudarte con la instalación y configuración de tus dispositivos.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-16 bg-primary">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold text-white mb-4">¿Listo para transformar tu hogar?</h2>
+<p class="text-gray-100 max-w-2xl mx-auto mb-8">Contáctanos por WhatsApp y recibe atención personalizada para encontrar las mejores soluciones de domótica para tu hogar.</p>
+<a href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20conocer%20más%20sobre%20los%20productos%20de%20InCntrl" class="whatsapp-btn inline-flex items-center bg-[#25D366] text-white px-8 py-4 !rounded-button font-medium text-lg transition duration-300 whitespace-nowrap">
+<i class="ri-whatsapp-fill mr-2 text-xl"></i>
+Contactar por WhatsApp
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<!-- Column 1 -->
+<div>
+<a href="#" class="font-['Montserrat'] text-white text-2xl font-bold tracking-tight mb-4 inline-block">InCntrl</a>
+<p class="text-gray-400 mb-4">Transformando hogares con tecnología inteligente desde 2023.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition duration-300">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition duration-300">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<!-- Column 2 -->
+<div>
+<h4 class="text-lg font-semibold mb-4">Categorías</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Iluminación Inteligente</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Seguridad Smart</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Asistentes Virtuales</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Automatización</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Ofertas Especiales</a></li>
+</ul>
+</div>
+<!-- Column 3 -->
+<div>
+<h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Sobre Nosotros</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Preguntas Frecuentes</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Política de Garantía</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Guías de Instalación</a></li>
+<li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Blog</a></li>
+</ul>
+</div>
+<!-- Column 4 -->
+<div>
+<h4 class="text-lg font-semibold mb-4">Contacto</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3 text-secondary">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-400">Av. Tecnológica 123, Col. Smart, Ciudad de México</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3 text-secondary">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-400">+52 55 1234 5678</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3 text-secondary">
+<i class="ri-whatsapp-line"></i>
+</div>
+<span class="text-gray-400">+52 55 8765 4321</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3 text-secondary">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-400">info@incntrl.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 InCntrl. Todos los derechos reservados.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Términos y Condiciones</a>
+<a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Política de Privacidad</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/1234567890?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20productos%20de%20InCntrl" class="fixed bottom-6 right-6 z-50 whatsapp-btn w-16 h-16 flex items-center justify-center bg-[#25D366] rounded-full text-white transition-all duration-300">
+<div class="relative">
+<i class="ri-whatsapp-fill text-3xl"></i>
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></span>
+</div>
+</a>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const menuButton = document.querySelector('.ri-menu-line').parentElement;
+const nav = document.querySelector('nav');
+menuButton.addEventListener('click', function() {
+nav.classList.toggle('hidden');
+nav.classList.toggle('flex');
+nav.classList.toggle('flex-col');
+nav.classList.toggle('absolute');
+nav.classList.toggle('top-16');
+nav.classList.toggle('left-0');
+nav.classList.toggle('w-full');
+nav.classList.toggle('bg-white');
+nav.classList.toggle('p-4');
+nav.classList.toggle('shadow-lg');
+nav.classList.toggle('z-50');
+});
+});
+</script>
+</body>
+</html>
